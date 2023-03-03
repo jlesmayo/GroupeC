@@ -13,8 +13,8 @@ provider "azurerm" {
   subscription_id = "d3e7e11a-8150-488d-9453-f0e1ef30bb7a"
 }
 
-data "azurerm_resource_group" "GroupeN" {
-  name = "Intervenants" # change by Groupe1/Groupe2/...
+data "azurerm_resource_group" "GroupeC" {
+  name = "Intervenants_FL" # change by Groupe1/Groupe2/...
 
 }
 
