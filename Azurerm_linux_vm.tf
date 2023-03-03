@@ -1,17 +1,17 @@
 
 variable "vm_name_pfx" {
   description = "VM Names"
-  default     = "test-vm" #to update by Groupe#
+  default     = "test-vm-GC" #to update by Groupe#
   type        = string
 }
 
 
 resource "azurerm_linux_virtual_machine" "example" {
   name                            = var.vm_name_pfx
-  resource_group_name             = data.azurerm_resource_group.GroupeN.name
-  location                        = data.azurerm_resource_group.GroupeN.location
+  resource_group_name             = data.azurerm_resource_group.rg_51_groupec
+  location                        = data.azurerm_resource_group.rg_51_groupec.location
   size                            = "Standard_B1s" #allowed: Standard_B1ls Standard_B1ms Standard_B1s Standard_B2s Standard_D2s_v3 Standard_DS1_v2
-  computer_name                   = "myvm"
+  computer_name                   = "myvm-GC"
   admin_username                  = "adminuser"
   admin_password                  = "Password1234!"
   disable_password_authentication = false
@@ -33,7 +33,7 @@ resource "azurerm_linux_virtual_machine" "example" {
     version   = "latest"
   }
   tags = {
-    environment = "Ecole_CAP_Azure"
+    environment = "Ecole_CAP_Azure-GC"
     session     = "1"
     groupe      = "0"
   }
